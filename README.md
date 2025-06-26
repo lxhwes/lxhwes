@@ -1,74 +1,60 @@
-# Hi there, I'm Alex! 👋
+# Profile Experiments 🧪
+
+Welcome to my GitHub profile laboratory! Instead of the typical bio approach, I've created multiple unique profile concepts across different branches. Each explores a different way to showcase technical skills and personality.
+
+## 🎭 Available Profile Variants
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=Welcome+to+my+GitHub+profile!;Always+learning+something+new;Building+cool+things+with+code" alt="Typing SVG" />
+
+| Profile Style | Branch | Description |
+|---------------|---------|-------------|
+| 🖥️ **Terminal Session** | [`profile/terminal-session`](../../tree/profile/terminal-session) | Live terminal showing realistic dev workflow |
+| 📚 **API Documentation** | [`profile/api-docs`](../../tree/profile/api-docs) | Treating myself as a developer API service |
+| 🧮 **Code Playground** | [`profile/code-playground`](../../tree/profile/code-playground) | Interactive algorithms and patterns showcase |
+| 🏗️ **System Architecture** | [`profile/system-architecture`](../../tree/profile/system-architecture) | Technical skills as infrastructure diagram |
+| 📝 **Git Log Style** | [`profile/git-log`](../../tree/profile/git-log) | Career told through commit history |
+| 🐛 **Debug Session** | [`profile/debug-session`](../../tree/profile/debug-session) | Problem-solving as debugging process |
+
 </div>
 
-## 🚀 About Me
+## 🚀 Quick Navigation
 
-I'm a passionate developer who loves exploring new technologies and building meaningful projects. Whether it's diving into the latest frameworks or solving complex problems, I'm always excited to learn and grow.
+```bash
+# Clone and explore locally
+git clone https://github.com/lxhwes/lxhwes.git
+cd lxhwes
 
-- 🔭 I'm currently working on expanding my development skills
-- 🌱 I'm constantly learning new technologies and best practices
-- 💬 Ask me about anything tech-related - I love discussing code!
-- ⚡ Fun fact: I believe the best code is not just functional, but also elegant and maintainable
+# View each profile variant
+git checkout profile/terminal-session     # Terminal-style profile
+git checkout profile/api-docs             # API documentation format  
+git checkout profile/code-playground      # Code examples and algorithms
+git checkout profile/system-architecture  # Infrastructure diagrams
+git checkout profile/git-log              # Git commit story format
+git checkout profile/debug-session        # Debugging session format
+```
 
-## 🛠️ Tech Stack & Tools
+## 💡 The Experiment
 
-### Languages
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+Traditional GitHub profiles follow a predictable format: bio, tech stack badges, GitHub stats. This repository explores more creative and technically interesting ways to present the same information.
 
-### Frameworks & Libraries
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
-
-### Tools & Technologies
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-![VS Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d4.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-
-## 📊 GitHub Stats
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=lxhwes&show_icons=true&theme=radical&hide_border=true&count_private=true" alt="Alex's GitHub stats" />
-</div>
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=lxhwes&layout=compact&theme=radical&hide_border=true" alt="Top Languages" />
-</div>
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=lxhwes&theme=radical&hide_border=true" alt="GitHub Streak" />
-</div>
+Each branch demonstrates:
+- **Technical creativity** over social media conventions
+- **Authentic developer personality** through code and systems thinking
+- **Interactive elements** that engage visitors differently
+- **Practical examples** rather than abstract descriptions
 
 ## 🎯 Current Focus
 
-- 🔨 Building full-stack applications with modern frameworks
-- 📚 Deepening my understanding of system design and architecture
-- 🌐 Exploring cloud technologies and DevOps practices
-- 🤝 Contributing to open-source projects and learning from the community
+- Building distributed systems with real-time capabilities
+- Exploring WebAssembly and Rust for performance-critical applications
+- Contributing to open-source developer tooling
+- Experimenting with system design patterns
 
-## 🌟 Featured Projects
+## 📬 Connect
 
-### 🚧 Coming Soon!
-I'm currently working on some exciting projects that I'll be sharing soon. Stay tuned for updates!
-
-## 📫 Let's Connect!
-
-<div align="center">
-  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourusername)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/yourusername)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your.email@example.com)
-
-</div>
+- **GitHub**: You're already here!
+- **Email**: [alex@howes.dev](mailto:alex@howes.dev)
+- **LinkedIn**: [alexhowes](https://linkedin.com/in/alexhowes)
 
 ---
 
@@ -77,5 +63,5 @@ I'm currently working on some exciting projects that I'll be sharing soon. Stay 
 </div>
 
 <div align="center">
-  <i>⭐ From [lxhwes](https://github.com/lxhwes)</i>
+  <i>🧪 Experimental profile by [lxhwes](https://github.com/lxhwes) | Pick your favorite variant!</i>
 </div>
