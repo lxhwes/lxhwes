@@ -12,6 +12,7 @@ Welcome to my GitHub profile laboratory! Instead of the typical bio approach, I'
 | 📚 **API Documentation** | [`profile/api-docs`](../../tree/profile/api-docs) | Treating myself as a developer API service |
 | 🧮 **Code Playground** | [`profile/code-playground`](../../tree/profile/code-playground) | Interactive algorithms and patterns showcase |
 | 🏗️ **System Architecture** | [`profile/system-architecture`](../../tree/profile/system-architecture) | Technical skills as infrastructure diagram |
+| ⚔️ **RPG Character** | [`profile/rpg-rogue`](../../tree/profile/rpg-rogue) | Dynamic RPG stats with GitHub Actions automation |
 | 📝 **Git Log Style** | [`profile/git-log`](../../tree/profile/git-log) | Career told through commit history |
 | 🐛 **Debug Session** | [`profile/debug-session`](../../tree/profile/debug-session) | Problem-solving as debugging process |
 
@@ -29,6 +30,7 @@ git checkout profile/terminal-session     # Terminal-style profile
 git checkout profile/api-docs             # API documentation format  
 git checkout profile/code-playground      # Code examples and algorithms
 git checkout profile/system-architecture  # Infrastructure diagrams
+git checkout profile/rpg-rogue            # Dynamic RPG character with GitHub Actions
 git checkout profile/git-log              # Git commit story format
 git checkout profile/debug-session        # Debugging session format
 ```
