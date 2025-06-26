@@ -1,81 +1,318 @@
-# Hi there, I'm Alex! 👋
+# Code Playground
 
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=Welcome+to+my+GitHub+profile!;Always+learning+something+new;Building+cool+things+with+code" alt="Typing SVG" />
-</div>
+Welcome to my interactive code laboratory. Here are some algorithms and patterns I find interesting:
 
-## 🚀 About Me
+## 🧮 Binary Search Visualization
 
-I'm a passionate developer who loves exploring new technologies and building meaningful projects. Whether it's diving into the latest frameworks or solving complex problems, I'm always excited to learn and grow.
+```python
+def binary_search(arr, target):
+    """
+    Visual representation of binary search algorithm
+    Time: O(log n) | Space: O(1)
+    """
+    left, right = 0, len(arr) - 1
+    
+    print(f"Searching for: {target}")
+    print(f"Array: {arr}")
+    
+    while left <= right:
+        mid = (left + right) // 2
+        spaces_left = " " * (mid * 3)
+        spaces_right = " " * ((len(arr) - mid - 1) * 3)
+        
+        print(f"{' ' * (left * 3)}[{' '.join(map(str, arr[left:mid]))} "
+              f"►{arr[mid]}◄ {' '.join(map(str, arr[mid+1:right+1]))}]")
+        
+        if arr[mid] == target:
+            print(f"Found at index {mid}!")
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+            print("Going right →")
+        else:
+            right = mid - 1
+            print("Going left ←")
+    
+    return -1
 
-- 🔭 I'm currently working on expanding my development skills
-- 🌱 I'm constantly learning new technologies and best practices
-- 💬 Ask me about anything tech-related - I love discussing code!
-- ⚡ Fun fact: I believe the best code is not just functional, but also elegant and maintainable
+# Example run:
+# binary_search([1, 3, 5, 7, 9, 11, 13, 15], 7)
+```
 
-## 🛠️ Tech Stack & Tools
+## 🌳 Trie Data Structure
 
-### Languages
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+```python
+class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.is_end = False
+        
+    def __repr__(self):
+        return f"Node(children={list(self.children.keys())}, end={self.is_end})"
 
-### Frameworks & Libraries
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
+class Trie:
+    """
+    Prefix tree for efficient string operations
+    Insert/Search: O(m) where m = word length
+    """
+    def __init__(self):
+        self.root = TrieNode()
+    
+    def insert(self, word):
+        node = self.root
+        for char in word:
+            if char not in node.children:
+                node.children[char] = TrieNode()
+            node = node.children[char]
+        node.is_end = True
+    
+    def visualize(self, node=None, prefix="", depth=0):
+        if node is None:
+            node = self.root
+            print("Trie Structure:")
+        
+        if node.is_end:
+            print("  " * depth + f"'{prefix}' ✓")
+        
+        for char, child in sorted(node.children.items()):
+            print("  " * depth + f"├─ {char}")
+            self.visualize(child, prefix + char, depth + 1)
 
-### Tools & Technologies
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-![VS Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d4.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+# Example:
+# trie = Trie()
+# for word in ["cat", "car", "card", "care", "careful"]:
+#     trie.insert(word)
+# trie.visualize()
+```
 
-## 📊 GitHub Stats
+## 🔄 Consistent Hashing
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=lxhwes&show_icons=true&theme=radical&hide_border=true&count_private=true" alt="Alex's GitHub stats" />
-</div>
+```python
+import hashlib
+import bisect
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=lxhwes&layout=compact&theme=radical&hide_border=true" alt="Top Languages" />
-</div>
+class ConsistentHash:
+    """
+    Distributed hash table with minimal key redistribution
+    Used in load balancing and distributed caching
+    """
+    def __init__(self, nodes=None, replicas=3):
+        self.replicas = replicas
+        self.ring = {}
+        self.sorted_keys = []
+        
+        if nodes:
+            for node in nodes:
+                self.add_node(node)
+    
+    def _hash(self, key):
+        return int(hashlib.md5(key.encode()).hexdigest(), 16)
+    
+    def add_node(self, node):
+        for i in range(self.replicas):
+            key = self._hash(f"{node}:{i}")
+            self.ring[key] = node
+            bisect.insort(self.sorted_keys, key)
+    
+    def get_node(self, key):
+        if not self.ring:
+            return None
+        
+        hash_key = self._hash(key)
+        idx = bisect.bisect_right(self.sorted_keys, hash_key)
+        
+        if idx == len(self.sorted_keys):
+            idx = 0
+        
+        return self.ring[self.sorted_keys[idx]]
+    
+    def visualize_distribution(self, keys):
+        distribution = {}
+        for key in keys:
+            node = self.get_node(key)
+            distribution[node] = distribution.get(node, 0) + 1
+        
+        print("Key Distribution:")
+        for node, count in sorted(distribution.items()):
+            bar = "█" * (count // 2)
+            print(f"{node:10} │{bar} ({count})")
 
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=lxhwes&theme=radical&hide_border=true" alt="GitHub Streak" />
-</div>
+# Example usage with load balancing
+```
 
-## 🎯 Current Focus
+## 🌐 WebSocket Connection Pool
 
-- 🔨 Building full-stack applications with modern frameworks
-- 📚 Deepening my understanding of system design and architecture
-- 🌐 Exploring cloud technologies and DevOps practices
-- 🤝 Contributing to open-source projects and learning from the community
+```javascript
+class WebSocketPool {
+    /**
+     * Connection pool manager for WebSocket connections
+     * Handles reconnection, load balancing, and failover
+     */
+    constructor(urls, options = {}) {
+        this.urls = urls;
+        this.connections = new Map();
+        this.activeConnections = [];
+        this.options = {
+            maxRetries: 3,
+            retryDelay: 1000,
+            heartbeatInterval: 30000,
+            ...options
+        };
+        
+        this.currentIndex = 0;
+        this.init();
+    }
+    
+    init() {
+        this.urls.forEach((url, index) => {
+            this.createConnection(url, index);
+        });
+    }
+    
+    createConnection(url, index) {
+        const ws = new WebSocket(url);
+        const connectionInfo = {
+            ws,
+            url,
+            index,
+            retries: 0,
+            lastHeartbeat: Date.now()
+        };
+        
+        ws.onopen = () => {
+            console.log(`📡 Connected to ${url}`);
+            this.connections.set(index, connectionInfo);
+            this.activeConnections.push(connectionInfo);
+            this.startHeartbeat(connectionInfo);
+        };
+        
+        ws.onclose = () => {
+            console.log(`📡 Disconnected from ${url}`);
+            this.handleDisconnection(connectionInfo);
+        };
+        
+        ws.onmessage = (event) => {
+            this.handleMessage(event.data, connectionInfo);
+        };
+    }
+    
+    // Round-robin load balancing
+    getNextConnection() {
+        if (this.activeConnections.length === 0) {
+            throw new Error('No active connections');
+        }
+        
+        const connection = this.activeConnections[this.currentIndex];
+        this.currentIndex = (this.currentIndex + 1) % this.activeConnections.length;
+        return connection;
+    }
+    
+    send(data) {
+        const connection = this.getNextConnection();
+        connection.ws.send(JSON.stringify(data));
+    }
+    
+    broadcast(data) {
+        this.activeConnections.forEach(conn => {
+            if (conn.ws.readyState === WebSocket.OPEN) {
+                conn.ws.send(JSON.stringify(data));
+            }
+        });
+    }
+    
+    visualizeConnections() {
+        console.log('\n🔗 Connection Status:');
+        this.connections.forEach((conn, index) => {
+            const status = conn.ws.readyState === WebSocket.OPEN ? '🟢' : '🔴';
+            const latency = Date.now() - conn.lastHeartbeat;
+            console.log(`  ${status} ${conn.url} (${latency}ms)`);
+        });
+    }
+}
 
-## 🌟 Featured Projects
+// Usage example:
+// const pool = new WebSocketPool([
+//     'ws://server1.com/ws',
+//     'ws://server2.com/ws', 
+//     'ws://server3.com/ws'
+// ]);
+```
 
-### 🚧 Coming Soon!
-I'm currently working on some exciting projects that I'll be sharing soon. Stay tuned for updates!
+## 🔐 Rate Limiter Implementation
 
-## 📫 Let's Connect!
+```python
+import time
+from collections import defaultdict, deque
 
-<div align="center">
-  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourusername)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/yourusername)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your.email@example.com)
+class SlidingWindowRateLimiter:
+    """
+    Rate limiter using sliding window log algorithm
+    Memory efficient with automatic cleanup
+    """
+    def __init__(self, max_requests=100, window_size=60):
+        self.max_requests = max_requests
+        self.window_size = window_size
+        self.requests = defaultdict(deque)
+        self.last_cleanup = time.time()
+    
+    def is_allowed(self, client_id):
+        current_time = time.time()
+        
+        # Cleanup old entries periodically
+        if current_time - self.last_cleanup > self.window_size:
+            self._cleanup_old_entries(current_time)
+            self.last_cleanup = current_time
+        
+        client_requests = self.requests[client_id]
+        
+        # Remove requests outside the window
+        cutoff_time = current_time - self.window_size
+        while client_requests and client_requests[0] < cutoff_time:
+            client_requests.popleft()
+        
+        # Check if under limit
+        if len(client_requests) < self.max_requests:
+            client_requests.append(current_time)
+            return True
+        
+        return False
+    
+    def get_reset_time(self, client_id):
+        client_requests = self.requests[client_id]
+        if not client_requests:
+            return 0
+        
+        oldest_request = client_requests[0]
+        return max(0, oldest_request + self.window_size - time.time())
+    
+    def visualize_usage(self, client_id):
+        client_requests = self.requests[client_id]
+        current_time = time.time()
+        
+        print(f"\n📊 Rate Limit Status for {client_id}:")
+        print(f"Requests in window: {len(client_requests)}/{self.max_requests}")
+        
+        if client_requests:
+            timeline = ["⚫"] * 60  # 60 second timeline
+            for req_time in client_requests:
+                pos = int((current_time - req_time))
+                if 0 <= pos < 60:
+                    timeline[59-pos] = "🔵"
+            
+            print("Timeline (last 60s): " + "".join(timeline))
+            print("                     ^now")
 
-</div>
+# Example: API endpoint protection
+# limiter = SlidingWindowRateLimiter(max_requests=10, window_size=60)
+```
+
+## 🎯 Current Experiments
+
+- **Distributed Consensus**: Implementing Raft algorithm in Go
+- **Event Sourcing**: Building audit-log system with PostgreSQL  
+- **WebAssembly**: Compiling Rust algorithms for browser execution
+- **Graph Algorithms**: Visualizing shortest path with D3.js
 
 ---
 
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=lxhwes&color=blueviolet&style=flat-square&label=Profile+Views" alt="Profile views" />
-</div>
-
-<div align="center">
-  <i>⭐ From [lxhwes](https://github.com/lxhwes)</i>
-</div>
+*Interactive examples above demonstrate practical algorithms and patterns I use in production systems.*
