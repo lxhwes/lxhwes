@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="800" height="200" role="img" aria-label="Alex Howes">
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .wave1 { stroke: #1a1a1a; opacity: 0.15; }
+      .wave2 { stroke: #1a1a1a; opacity: 0.09; }
+      .wave3 { stroke: #1a1a1a; opacity: 0.05; }
+      .name { fill: #0d0d0d; font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace; font-size: 38px; font-weight: 600; }
+      .cursor { fill: #0d0d0d; }
+      .sub { fill: #555555; font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace; font-size: 14px; }
+      .email { fill: #888888; font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace; font-size: 14px; }
+      @media (prefers-color-scheme: dark) {
+        .bg { fill: #0d1117; }
+        .wave1 { stroke: #ffffff; opacity: 0.12; }
+        .wave2 { stroke: #ffffff; opacity: 0.07; }
+        .wave3 { stroke: #ffffff; opacity: 0.04; }
+        .name { fill: #e6edf3; }
+        .cursor { fill: #58a6ff; }
+        .sub { fill: #8b949e; }
+        .email { fill: #6e7681; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="800" height="200"/>
+
+  <!-- Waves (static, scrolling animation) -->
+  <g clip-path="url(#wave-clip)">
+    <defs>
+      <clipPath id="wave-clip">
+        <rect width="800" height="200"/>
+      </clipPath>
+    </defs>
+    <g>
+      <animateTransform attributeName="transform" type="translate" from="0,0" to="-800,0" dur="8s" repeatCount="indefinite"/>
+      <!-- Wave 3 (faintest, smallest) -->
+      <path class="wave3" fill="none" stroke-width="1.5"
+        d="M -80 100 C -60 88, -20 88, 0 100 C 20 112, 60 112, 80 100 C 100 88, 140 88, 160 100 C 180 112, 220 112, 240 100 C 260 88, 300 88, 320 100 C 340 112, 380 112, 400 100 C 420 88, 460 88, 480 100 C 500 112, 540 112, 560 100 C 580 88, 620 88, 640 100 C 660 112, 700 112, 720 100 C 740 88, 780 88, 800 100 C 820 112, 860 112, 880 100 C 900 88, 940 88, 960 100 C 980 112, 1020 112, 1040 100 C 1060 88, 1100 88, 1120 100 C 1140 112, 1180 112, 1200 100 C 1220 88, 1260 88, 1280 100 C 1300 112, 1340 112, 1360 100 C 1380 88, 1420 88, 1440 100 C 1460 112, 1500 112, 1520 100 C 1540 88, 1580 88, 1600 100 C 1620 112, 1660 112, 1680 100"/>
+      <!-- Wave 2 (mid) -->
+      <path class="wave2" fill="none" stroke-width="2"
+        d="M -40 100 C -18 82, 22 82, 40 100 C 58 118, 98 118, 120 100 C 142 82, 182 82, 200 100 C 218 118, 258 118, 280 100 C 302 82, 342 82, 360 100 C 378 118, 418 118, 440 100 C 462 82, 502 82, 520 100 C 538 118, 578 118, 600 100 C 622 82, 662 82, 680 100 C 698 118, 738 118, 760 100 C 782 82, 822 82, 840 100 C 858 118, 898 118, 920 100 C 942 82, 982 82, 1000 100 C 1018 118, 1058 118, 1080 100 C 1102 82, 1142 82, 1160 100 C 1178 118, 1218 118, 1240 100 C 1262 82, 1302 82, 1320 100 C 1338 118, 1378 118, 1400 100 C 1422 82, 1462 82, 1480 100 C 1498 118, 1538 118, 1560 100 C 1582 82, 1622 82, 1640 100"/>
+      <!-- Wave 1 (most prominent) -->
+      <path class="wave1" fill="none" stroke-width="2.5"
+        d="M 0 100 C 22 70, 58 70, 80 100 C 102 130, 138 130, 160 100 C 182 70, 218 70, 240 100 C 262 130, 298 130, 320 100 C 342 70, 378 70, 400 100 C 422 130, 458 130, 480 100 C 502 70, 538 70, 560 100 C 582 130, 618 130, 640 100 C 662 70, 698 70, 720 100 C 742 130, 778 130, 800 100 C 822 70, 858 70, 880 100 C 902 130, 938 130, 960 100 C 982 70, 1018 70, 1040 100 C 1062 130, 1098 130, 1120 100 C 1142 70, 1178 70, 1200 100 C 1222 130, 1258 130, 1280 100 C 1302 70, 1338 70, 1360 100 C 1382 130, 1418 130, 1440 100 C 1462 70, 1498 70, 1520 100 C 1542 130, 1578 130, 1600 100"/>
+    </g>
+  </g>
+
+  <!-- Name with blinking cursor -->
+  <text class="name" x="40" y="110">Alex Howes</text>
+  <rect class="cursor" x="302" y="78" width="3" height="38">
+    <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.4;0.5;0.9;1" dur="1.1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Tagline -->
+  <text class="sub" x="40" y="138">github.com/lxhwes</text>
+
+  <!-- Email -->
+  <text class="email" x="40" y="160">alex@howes.dev</text>
+</svg>
