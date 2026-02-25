@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200" role="img" aria-label="Alex Howes">
+  <style>
+    .bg   { fill: #0d1117; }
+    .node { fill: #c9d1d9; }
+    .edge { stroke: #c9d1d9; fill: none; }
+    .name { fill: #e6edf3; font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace; font-size: 22px; font-weight: 600; letter-spacing: 0.02em; }
+    .sub  { fill: #8b949e; font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace; font-size: 11px; letter-spacing: 0.08em; }
+
+    @media (prefers-color-scheme: light) {
+      .bg   { fill: #ffffff; }
+      .node { fill: #24292f; }
+      .edge { stroke: #24292f; }
+      .name { fill: #24292f; }
+      .sub  { fill: #57606a; }
+    }
+  </style>
+
+  <!-- Background -->
+  <rect class="bg" width="800" height="200"/>
+
+  <!-- ===== EDGES ===== -->
+  <!-- A(72,38) -- B(158,72) -->
+  <line class="edge" stroke-opacity="0.15" x1="72" y1="38" x2="158" y2="72">
+    <animate attributeName="stroke-opacity" values="0.15;0.05;0.15" dur="6s" repeatCount="indefinite"/>
+  </line>
+  <!-- A(72,38) -- D(220,28) -->
+  <line class="edge" stroke-opacity="0.12" x1="72" y1="38" x2="220" y2="28">
+    <animate attributeName="stroke-opacity" values="0.08;0.20;0.08" dur="9s" repeatCount="indefinite"/>
+  </line>
+  <!-- B(158,72) -- C(310,58) -->
+  <line class="edge" stroke-opacity="0.12" x1="158" y1="72" x2="310" y2="58">
+    <animate attributeName="stroke-opacity" values="0.15;0.04;0.15" dur="7.5s" repeatCount="indefinite"/>
+  </line>
+  <!-- B(158,72) -- E(270,118) -->
+  <line class="edge" stroke-opacity="0.10" x1="158" y1="72" x2="270" y2="118">
+    <animate attributeName="stroke-opacity" values="0.06;0.18;0.06" dur="10s" repeatCount="indefinite"/>
+  </line>
+  <!-- C(310,58) -- D(220,28) -->
+  <line class="edge" stroke-opacity="0.10" x1="310" y1="58" x2="220" y2="28">
+    <animate attributeName="stroke-opacity" values="0.12;0.03;0.12" dur="5.5s" repeatCount="indefinite"/>
+  </line>
+  <!-- C(310,58) -- F(390,88) -->
+  <line class="edge" stroke-opacity="0.15" x1="310" y1="58" x2="390" y2="88">
+    <animate attributeName="stroke-opacity" values="0.15;0.06;0.15" dur="8s" repeatCount="indefinite"/>
+  </line>
+  <!-- E(270,118) -- F(390,88) -->
+  <line class="edge" stroke-opacity="0.12" x1="270" y1="118" x2="390" y2="88">
+    <animate attributeName="stroke-opacity" values="0.08;0.20;0.08" dur="7s" repeatCount="indefinite"/>
+  </line>
+  <!-- E(270,118) -- H(180,148) -->
+  <line class="edge" stroke-opacity="0.10" x1="270" y1="118" x2="180" y2="148">
+    <animate attributeName="stroke-opacity" values="0.14;0.04;0.14" dur="8.5s" repeatCount="indefinite"/>
+  </line>
+  <!-- F(390,88) -- G(460,44) -->
+  <line class="edge" stroke-opacity="0.12" x1="390" y1="88" x2="460" y2="44">
+    <animate attributeName="stroke-opacity" values="0.10;0.22;0.10" dur="11s" repeatCount="indefinite"/>
+  </line>
+  <!-- G(460,44) -- I(540,66) -->
+  <line class="edge" stroke-opacity="0.15" x1="460" y1="44" x2="540" y2="66">
+    <animate attributeName="stroke-opacity" values="0.15;0.05;0.15" dur="7s" repeatCount="indefinite"/>
+  </line>
+  <!-- I(540,66) -- J(610,38) -->
+  <line class="edge" stroke-opacity="0.10" x1="540" y1="66" x2="610" y2="38">
+    <animate attributeName="stroke-opacity" values="0.08;0.18;0.08" dur="6.5s" repeatCount="indefinite"/>
+  </line>
+  <!-- I(540,66) -- K(560,130) -->
+  <line class="edge" stroke-opacity="0.12" x1="540" y1="66" x2="560" y2="130">
+    <animate attributeName="stroke-opacity" values="0.12;0.03;0.12" dur="9.5s" repeatCount="indefinite"/>
+  </line>
+  <!-- K(560,130) -- L(660,110) -->
+  <line class="edge" stroke-opacity="0.10" x1="560" y1="130" x2="660" y2="110">
+    <animate attributeName="stroke-opacity" values="0.06;0.18;0.06" dur="8s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- ===== NODES ===== -->
+  <!-- Node A -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0; 2,3; -1,2; 1,-1; 0,0" dur="14s" repeatCount="indefinite"/>
+    <circle class="node" cx="72" cy="38" r="2.5"/>
+  </g>
+  <!-- Node B -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0; -2,-1; 1,3; -1,0; 0,0" dur="17s" repeatCount="indefinite"/>
+    <circle class="node" cx="158" cy="72" r="3"/>
+  </g>
+  <!-- Node C -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0; 3,-2; -1,1; 2,-1; 0,0" dur="11s" repeatCount="indefinite"/>
+    <circle class="node" cx="310" cy="58" r="2.5"/>
+  </g>
+  <!-- Node D -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0; -1,2; 2,-1; -2,1; 0,0" dur="16s" repeatCount="indefinite"/>
+    <circle class="node" cx="220" cy="28" r="2"/>
+  </g>
+  <!-- Node E -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0; 1,2; -2,-1; 1,2; 0,0" dur="13s" repeatCount="indefinite"/>
+    <circle class="node" cx="270" cy="118" r="2.5"/>
+  </g>
+  <!-- Node F (hub) -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0; -2,1; 1,-2; -1,2; 0,0" dur="19s" repeatCount="indefinite"/>
+    <circle class="node" cx="390" cy="88" r="3.5"/>
+  </g>
+  <!-- Node G -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0; 2,-2; -1,3; 2,-2; 0,0" dur="12s" repeatCount="indefinite"/>
+    <circle class="node" cx="460" cy="44" r="2"/>
+  </g>
+  <!-- Node H -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0; -1,-2; 2,1; -2,2; 0,0" dur="15s" repeatCount="indefinite"/>
+    <circle class="node" cx="180" cy="148" r="2"/>
+  </g>
+  <!-- Node I -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0; 1,3; -2,-1; 2,1; 0,0" dur="18s" repeatCount="indefinite"/>
+    <circle class="node" cx="540" cy="66" r="3"/>
+  </g>
+  <!-- Node J -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0; -2,1; 1,-2; -1,3; 0,0" dur="14s" repeatCount="indefinite"/>
+    <circle class="node" cx="610" cy="38" r="2"/>
+  </g>
+  <!-- Node K -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0; 2,2; -1,-1; 1,2; 0,0" dur="20s" repeatCount="indefinite"/>
+    <circle class="node" cx="560" cy="130" r="2.5"/>
+  </g>
+  <!-- Node L -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0; -1,2; 3,-1; -2,1; 0,0" dur="16s" repeatCount="indefinite"/>
+    <circle class="node" cx="660" cy="110" r="2"/>
+  </g>
+
+  <!-- ===== TEXT ===== -->
+  <text class="name" x="72" y="172">Alex Howes</text>
+  <text class="sub"  x="72" y="191">alex@howes.dev</text>
+</svg>
