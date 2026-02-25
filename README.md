@@ -15,6 +15,10 @@ Welcome to my GitHub profile laboratory! Instead of the typical bio approach, I'
 | ⚔️ **RPG Character** | [`profile/rpg-rogue`](../../tree/profile/rpg-rogue) | Dynamic RPG stats with GitHub Actions automation |
 | 📝 **Git Log Style** | [`profile/git-log`](../../tree/profile/git-log) | Career told through commit history |
 | 🐛 **Debug Session** | [`profile/debug-session`](../../tree/profile/debug-session) | Problem-solving as debugging process |
+| 🃏 **Minimal Card** | [`profile/minimal-card`](../../tree/profile/minimal-card) | Near-empty business card — negative space as design |
+| 🔤 **Typographic** | [`profile/typographic`](../../tree/profile/typographic) | Box-drawing monospace layout, TUI aesthetic |
+| 📄 **Single Artifact** | [`profile/single-artifact`](../../tree/profile/single-artifact) | One piece of real code, no introduction |
+| 🧱 **Brutalist** | [`profile/brutalist`](../../tree/profile/brutalist) | Raw markdown, ten lines, zero decoration |
 
 </div>
 
@@ -33,6 +37,10 @@ git checkout profile/system-architecture  # Infrastructure diagrams
 git checkout profile/rpg-rogue            # Dynamic RPG character with GitHub Actions
 git checkout profile/git-log              # Git commit story format
 git checkout profile/debug-session        # Debugging session format
+git checkout profile/minimal-card        # Near-empty business card
+git checkout profile/typographic         # Box-drawing monospace layout
+git checkout profile/single-artifact     # Single code artifact, no intro
+git checkout profile/brutalist           # Raw markdown, zero decoration
 ```
 
 ## 💡 The Experiment
