@@ -4,6 +4,6 @@
 
 ---
 
-Distributed systems. Real-time applications. Developer tooling.
+Still compiling.
 
 alex@howes.dev
