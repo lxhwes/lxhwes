@@ -170,5 +170,5 @@
   <text class="cursor" x="305" y="340">▌<animate attributeName="opacity" values="1;1;0;0" dur="1s" repeatCount="indefinite"/></text>
 
   <!-- Email subtitle -->
-  <text class="email" x="48" y="372">alex@howes.dev</text>
+  <text class="email" x="48" y="372">alex@oovoid.com</text>
 </svg>
