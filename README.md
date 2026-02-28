@@ -6,7 +6,11 @@
   </a>
 </div>
 
+<div align="center">
+
 [![Steam](https://img.shields.io/badge/steam-lxhws-1b2838?style=flat-square&logo=steam&logoColor=white)](https://steamcommunity.com/id/lxhws/)
+
+</div>
 
 ---
 
