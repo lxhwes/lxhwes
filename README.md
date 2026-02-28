@@ -4,11 +4,6 @@
       <img src="https://oovoidcom.vercel.app/api/stats" alt="Alex Howes — now playing" width="800" />
     </picture>
   </a>
-  <a href="https://steamcommunity.com/id/lxhws/">
-    <picture>
-      <img src="https://oovoidcom.vercel.app/api/games" alt="Alex Howes — Steam stats" width="800" />
-    </picture>
-  </a>
 </div>
 
 <div align="center">
